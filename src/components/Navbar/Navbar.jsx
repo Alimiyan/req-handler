@@ -1,22 +1,8 @@
 import React from "react";
 import "./Navbar.css";
-import Button from "@mui/material/Button";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { purple } from "@mui/material/colors";
+import Stack from "@mui/material/Stack";
 
 function Navbar() {
-  const theme = createTheme({
-    palette: {
-      primary: {
-        // Purple and green play nicely together.
-        main: purple[500],
-      },
-      secondary: {
-        // This is green.A700 as hex.
-        main: "#11cb5f",
-      },
-    },
-  });
   return (
     <div>
       <link
@@ -43,10 +29,14 @@ function Navbar() {
               <a href="#about">Contact</a>
             </li>
           </ul>
-          <ThemeProvider theme={theme}>
-            <Button variant="outlined">Sign In</Button>
-            <Button color="secondary" variant="outlined">Sign Up</Button>
-          </ThemeProvider>
+          <Stack
+            direction="row"
+            spacing={2}
+            style={{ float: "right", padding: "13px" }}
+          >
+            <button className="btn1">Sign In</button>
+            <button className="btn2">Sign Up</button>
+          </Stack>
         </div>
       </nav>
       <div className="menuIcon">
@@ -66,6 +56,7 @@ function Navbar() {
           </li>
         </ul>
       </div>
+      <hr />
     </div>
   );
 }
