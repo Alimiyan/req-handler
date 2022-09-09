@@ -17,7 +17,7 @@ function List(props) {
   return (
     <ul >
       {filteredData.map((item) => (
-        <li style={{cursor: "pointer"}} onClick={navigate("/templates")} key={item.id}>{item.text}</li>
+        <li style={{margin:"5px",fontWeight:"bold"}} key={item.id}><a href="/templates">{item.text}</a></li>
       ))}
     </ul>
   );

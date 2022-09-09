@@ -1,8 +1,10 @@
 import React from "react";
 import "./Navbar.css";
 import Stack from "@mui/material/Stack";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  let navigate = useNavigate();
   return (
     <div>
       <link
@@ -18,7 +20,7 @@ function Navbar() {
           </div> */}
           <ul id="menu">
             <li>
-              <a href="#home">Home</a>
+              <a href="/">Home</a>
             </li>
 
             <li>

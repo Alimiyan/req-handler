@@ -14,6 +14,7 @@ function Home() {
   };
   return (
     <div className="main">
+        
       <Navbar />
       <h1 className="hm">The quickest way to write a request letter</h1>
       <div className="search">
