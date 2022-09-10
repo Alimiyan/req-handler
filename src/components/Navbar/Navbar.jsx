@@ -24,7 +24,7 @@ function Navbar() {
             </li>
 
             <li>
-              <a href="#services">Categories</a>
+              <a href="#categories">Categories</a>
             </li>
 
             <li>

@@ -9,7 +9,7 @@
   },
   {
     "id": 3,
-    "text": "Mense Hostel"
+    "text": "Mens Hostel"
   },
   {
     "id": 4,
@@ -22,5 +22,25 @@
   {
     "id": 6,
     "text": "Hostel Mess"
+  },
+  {
+    "id": 7,
+    "text": "Hostel Security"
+  },
+  {
+    "id": 8,
+    "text": "Online Class"
+  },
+  {
+    "id": 9,
+    "text": "Attendance"
+  },
+  {
+  "id" : 10,
+    "text" : "Scholarship"
+  },
+  {
+  "id" : 11,
+    "text" : "Other"
   }
 ]

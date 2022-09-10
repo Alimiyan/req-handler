@@ -5,14 +5,17 @@ import { useNavigate } from "react-router-dom";
 
 function Templates() {
   let navigate = useNavigate();
+  let action=()=>{
+    navigate("/editor")
+  }
   return (
     <div>
       <Navbar />
       <h1>Templates</h1>
       <div style={{marginTop:"8px"}} className="row">
-        <img onClick={navigate()} src={Img} alt="req" />
-        <img src={Img} alt="req" />
-        <img src={Img} alt="req" />
+        <img style={{cursor:"pointer"}} onClick={action} src={Img} alt="req" />
+        <img style={{cursor:"pointer"}} onClick={action} src={Img} alt="req" />
+        <img style={{cursor:"pointer"}} onClick={action} src={Img} alt="req" />
       </div>
     </div>
   );

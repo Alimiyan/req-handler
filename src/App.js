@@ -5,6 +5,7 @@ import SignIn from "./components/SignIn/SignIn";
 import Categories from "./components/Categories/Categories";
 import Contact from "./components/Contact/Contact";
 import Templates from "./components/Templates/Templates";
+import Editor from "./components/Editor/Editor";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/templates" element={<Templates />} />
+          <Route path="/editor" element={<Editor />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
       </BrowserRouter>
