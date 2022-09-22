@@ -28,7 +28,7 @@ function Navbar() {
             </li>
 
             <li>
-              <a href="#about">Contact</a>
+              <a href="/contact">Contact</a>
             </li>
           </ul>
           <Stack
@@ -36,7 +36,7 @@ function Navbar() {
             spacing={2}
             style={{ float: "right", padding: "13px" }}
           >
-            <button className="btn1">Sign In</button>
+            <button onClick={()=>{navigate("/signin")}} className="btn1">Sign In</button>
             <button className="btn2">Sign Up</button>
           </Stack>
         </div>
