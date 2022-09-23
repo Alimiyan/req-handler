@@ -19,8 +19,8 @@ function SignUp() {
         password: password,
       })
       .then((res) => {
-        Cookies.set('id', res.data.id)
-        navigate("/");
+        // console.log(res.data);
+        navigate("/signin");
       })
       .catch((err) => {
         console.log(err);
@@ -39,7 +39,7 @@ function SignUp() {
               onSuccess={(response) => {
                 setEmail(response.email);
                 setUsername(response.name);
-                console.log(response);
+                // console.log(response);
               }}
               onError={() => {
                 console.log("Login Failed");

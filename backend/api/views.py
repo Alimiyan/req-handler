@@ -19,12 +19,28 @@ def signUp(request):
         user = email[0]
     return Response(userSerializer(user).data)
 
+# @api_view(['POST'])
+# def login(request):
+#     data = json.loads(request.body.decode('utf-8'))
+#     user = User.objects.filter(email=data['email'])
+#     # print user data from above variable
+#     if user.exists():
+#         print(user[0].username)
+#         user = user[0].username
+#     else:
+#         user = None
+#     return Response(userSerializer(user).data)
+
 @api_view(['POST'])
 def login(request):
     data = json.loads(request.body.decode('utf-8'))
-    email = User.objects.filter(email=data['email'])
-    if email.exists():
-        user = email[0]
+    print(data)
+    user = User.objects.filter(email=data['email'])
+    print(user[0])
+    if user.exists():
+        user = user[0]
+        print(user)
     else:
         user = None
+        print('no')
     return Response(userSerializer(user).data)

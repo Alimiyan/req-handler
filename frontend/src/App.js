@@ -7,6 +7,7 @@ import Contact from "./components/Contact/Contact";
 import Templates from "./components/Templates/Templates";
 import Editor from "./components/Editor/Editor";
 import SignUp from "./components/SignUp/SignUp";
+import Admin from "./components/Admin/Admin";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/categories" element={<Categories />} />

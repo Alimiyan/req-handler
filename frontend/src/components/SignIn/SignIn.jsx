@@ -5,55 +5,35 @@ import { GoogleLogin } from "@moeindana/google-oauth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 function SignIn() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
   return (
     <div>
       <Navbar />
       <div className="fullscreen-containers">
         <div className="login-containers">
           <h1 className="logname">Login</h1>
-          <form className="forms">
-            <div className="input-groups">
-              <input
-                type="text"
-                placeholder="Username"
-                id="text"
-                name="text"
-                className="input-username"
-              />
-            </div>
-            <div className="input-groups">
-              <input
-                type="password"
-                placeholder="Password"
-                id="password"
-                name="password"
-                className="input-password"
-              />
-            </div>
-          </form>
-          <button type="button" className="btnlogin">
-            Login
-          </button>
+         
           <div style={{ marginTop: "20px" }}>
             <GoogleLogin
               onSuccess={(response) => {
-                setEmail(response.email);
-                setUsername(response.name);
-                // console.log(response);
+                // setEmail(response.email);
+                // setUsername(response.name);
+                console.log(response);
                 axios.post("http://127.0.0.1:8000/api/login/",
                 {
-                  username: username,
-                  email: email,
+                  headers:{"Content-Type":"application/www-form-urlencoded"},
+                  username: response.username,
+                  email: response.email,
                 }).then((res) => {
+                  // console.log(res.data);
+                  Cookies.set('id', res.data.id)
+                  Cookies.set('name', res.data.username)
                   navigate("/");
-                  // console.log(res);
                 }).catch((err) => {
-                  alert("Login Failed");
+                  // alert("Login Failed", err);
                   console.log(err);
                 });
               }}
