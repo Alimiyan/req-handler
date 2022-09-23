@@ -6,6 +6,7 @@ import List from "../List/List";
 import Stack from "@mui/material/Stack";
 
 function Home() {
+  const pg = "home";
   const [inputText, setInputText] = useState("");
   let inputHandler = (e) => {
     //convert input text to lower case
@@ -14,16 +15,17 @@ function Home() {
   };
   return (
     <div className="main">
-        
       <Navbar />
       <h1 className="hm">The quickest way to write a request letter</h1>
       <div className="search">
-        <textarea className="txtar" placeholder="Search for templates here!"
-        onChange={inputHandler}
+        <textarea
+          className="txtar"
+          placeholder="Search for templates here!"
+          onChange={inputHandler}
         />
-      <button className="btn2">Search</button>
+        <button className="btn2">Search</button>
       </div>
-      <List input={inputText}/>
+      <List input={inputText} pg={pg} />
     </div>
   );
 }
