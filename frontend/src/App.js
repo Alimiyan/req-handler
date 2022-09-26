@@ -8,8 +8,15 @@ import Templates from "./components/Templates/Templates";
 import Editor from "./components/Editor/Editor";
 import SignUp from "./components/SignUp/SignUp";
 import Admin from "./components/Admin/Admin";
+import { useEffect, useState } from "react";
+
 
 function App() {
+  const [req, setReq] = useState("");
+  useEffect(() => {
+    
+  }, [])
+  
   return (
     <div className="App">
       <BrowserRouter>

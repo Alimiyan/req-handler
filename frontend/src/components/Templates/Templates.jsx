@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import Img from "../../Assets/req.png";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Templates() {
+  const location = useLocation();
   let navigate = useNavigate();
+  const [req, setReq] = useState("");
+  useEffect(() => {
+    // alert(location.state.name)
+    setReq(location.state.name);
+  }, []);
   let action=()=>{
-    navigate("/editor")
+    navigate("/editor",{state:{"name":req}} )
   }
   return (
     <div>
